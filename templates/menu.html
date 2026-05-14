@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Principal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">🛒 Sistema de Vendas v2</h1>
+      <div>
+        👤 {{ usuario }} 
+        <a href="{{ url_for('logout') }}" class="btn btn-danger" style="margin-left:15px;">Sair</a>
+      </div>
+    </div>
+    <div class="card">
+      <h2 style="text-align:center; margin-bottom:40px;">Menu Principal</h2>
+      
+      <div class="menu-grid">
+        <a href="{{ url_for('clientes') }}" class="menu-item">
+          <h3>👤 Cadastrar Cliente</h3>
+        </a>
+        <a href="{{ url_for('produtos') }}" class="menu-item">
+          <h3>📦 Cadastrar Produto</h3>
+        </a>
+        <a href="{{ url_for('nova_venda') }}" class="menu-item">
+          <h3>💰 Nova Venda</h3>
+        </a>
+        <a href="{{ url_for('listar_clientes') }}" class="menu-item">
+          <h3>📋 Listar Clientes</h3>
+        </a>
+        <a href="{{ url_for('listar_produtos') }}" class="menu-item">
+          <h3>📦 Listar Produtos</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

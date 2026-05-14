@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listar Produtos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">📦 Produtos em Estoque</h1>
+      <a href="{{ url_for('menu') }}" class="btn btn-danger">Voltar ao Menu</a>
+    </div>
+    <div class="card">
+      <table style="width:100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background:#0f2b5c; color:white;">
+            <th style="padding:12px; text-align:left;">ID</th>
+            <th style="padding:12px; text-align:left;">Produto</th>
+            <th style="padding:12px; text-align:right;">Preço</th>
+            <th style="padding:12px; text-align:center;">Estoque</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for produto in produtos %}
+          <tr>
+            <td style="padding:12px;">{{ produto['id'] }}</td>
+            <td style="padding:12px;">{{ produto['name'] }}</td>
+            <td style="padding:12px; text-align:right;">R$ {{ produto['price']|round(2) }}</td>
+            <td style="padding:12px; text-align:center;">{{ produto['stock'] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% if not produtos %}
+        <p style="text-align:center; padding:40px; color:#777;">Nenhum produto cadastrado ainda.</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

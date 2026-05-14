@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Sistema de Vendas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container" style="max-width: 450px; margin-top: 120px;">
+    <div class="header">
+      <h1 class="title">🛒 Novo Sistema de Vendas</h1>
+    </div>
+    <div class="card">
+      <h2 style="text-align:center; margin-bottom:25px;">Acesso ao Sistema</h2>
+      <form method="POST" action="{{ url_for('login') }}">
+        <div class="form-group">
+          <label>Usuário</label>
+          <input type="text" name="username" value="admin" required>
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" name="password" value="admin" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; padding:16px;">Entrar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

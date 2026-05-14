@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Produto</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">📦 Cadastrar Produto</h1>
+      <a href="{{ url_for('menu') }}" class="btn btn-danger">Voltar</a>
+    </div>
+    <div class="card">
+      <form method="POST">
+        <div class="form-group">
+          <label>Nome do Produto</label>
+          <input type="text" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label>Preço (R$)</label>
+          <input type="number" step="0.01" name="preco" required>
+        </div>
+        <div class="form-group">
+          <label>Estoque Inicial</label>
+          <input type="number" name="estoque" value="10" required>
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar Produto</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

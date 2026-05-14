@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Cliente</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">👤 Cadastrar Cliente</h1>
+      <a href="{{ url_for('menu') }}" class="btn btn-danger">Voltar</a>
+    </div>
+    <div class="card">
+      <form method="POST">
+        <div class="form-group">
+          <label>Nome do Cliente</label>
+          <input type="text" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email">
+        </div>
+        <div class="form-group">
+          <label>Telefone</label>
+          <input type="text" name="phone">
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar Cliente</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
